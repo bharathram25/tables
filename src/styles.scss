@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// .name[_ngcontent-txs-c54]{
+//   line-height: 1.2;
+// }
+
+// .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+//   padding-top: 5px;
+//   padding-bottom: 5px;
+// }
+// .mat-mdc-form-field-infix {
+//   min-height: 25px;
+// }
+// .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+//   padding-top: 5px;
+//   padding-bottom: 5px;
+// }
+// mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+//   padding-top: 5px;
+//   padding-bottom: 5px;
+// }
+// .mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input, .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control{
+//   height: 25px;
+// }
+
+// .mat-mdc-form-field-flex {
+//   height: 30px !important;
+// }
+
+.accept{
+  background-color: green !important;
+}
+.partial{
+  background-color: rgb(218, 218, 20) !important;
+}
+.reject{
+  background-color: rgb(243, 5, 5);
+}
+
+.mdc-snackbar__surface{
+ background-color: transparent !important;
+ color: white !important;
+}
+.mat-body p, .mat-body-2 p, .mat-typography .mat-body p, .mat-typography .mat-body-2 p, .mat-typography p {
+  margin: 0 0 0 0 !important;
+}
+
+
+

@@ -1,0 +1,28 @@
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true"><mat-icon>menu</mat-icon></button>
+
+      <!-- <span>WEEK 2</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <a routerLink="/app/table" mat-button>TABLE</a>
+        <a routerLink="/app/task" mat-button>TASK</a>
+        <a routerLink="/app/forms" mat-button>FORMS</a>
+      </div> -->
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+        <a routerLink="/app/table" mat-list-item>TABLE</a>
+        <a routerLink="/app/task" mat-list-item>TASK</a>
+        <a routerLink="/app/forms" mat-list-item>FORMS</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

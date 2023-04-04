@@ -1,0 +1,114 @@
+.full{
+    padding:2%;
+    background-color: #f3f4f8;
+}
+.box{
+    background-color: #ffffff;
+}
+.left{
+    padding: 3%;
+}
+.chairs{
+    height: 70px;
+}
+.chair{
+    width: 310px;
+    height: 350px;
+}
+.chair-img{
+    border: 1px solid #dee2e6;
+    height: 100%;
+    width: 60px;
+    border-radius: 3px;
+    padding:6% 2%;
+}
+.chair-img:hover{
+    cursor: pointer;
+}
+.chair-img img{
+    height: 50px;
+    padding:6% 2%;
+}
+.right{
+    padding: 30px;
+}
+.name{
+    font-size: 25px;
+    color: #6c7592;
+    font-weight: 550;
+    margin-bottom:15px;
+}
+.name i{
+    margin-left: 15px;
+}
+.add-date{
+    color: #646d75;
+}
+.star i{
+    color: #ffc35a !important;
+}
+.instock-btn{
+    background-color: #d3f6ec;
+    color: #3ed197;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.retail{
+    color: #6c7581;
+    font-size: 15px;
+    font-weight: 550;
+}
+.price{
+    font-size: 25px;
+    color: #6c757d;
+    font-weight: 500;
+}
+.quantity{
+    color: #7b6f78;
+    font-weight: 550;
+    font-size: 17px;
+}
+.quantities input{
+    width: 70px;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    color: #7b6f78;
+}
+.add-to-cart button{
+    width: 125px !important;
+    background-color: #fa5c7c;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 2%;
+}
+.add-to-cart button i{
+    margin-left:2px;
+}
+.add-to-cart button span{
+    margin-left: 10px;
+}
+.description{
+    color: #6c7581;
+    font-size: 17px;
+    font-weight: 550;
+}
+.des-content{
+    color: #8d8681;
+    font-size: 15px;
+}
+.stock p{
+    font-weight: 550;
+    color: #6c7581;
+}
+.stock span{
+    color: #8d8681;
+}
+
+@media (max-width: 600px){
+    .name{
+        font-size: 20px;
+    }
+}

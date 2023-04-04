@@ -1,0 +1,51 @@
+<div class="full">
+  <div class="box" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px">
+<!--------------------------- LEFT BOX ------------------------>
+    <div class="left" fxFlex="40%" fxLayout="column" fxLayoutGap="50px" fxLayoutAlign="center center">
+      <img class="chair" src="../../../assets/c{{ img }}.jpg" alt="c1" />
+      <div class="chairs" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+        <div class="chair-img" fxLayoutAlign="center center" (click)="onclick('2')"><img src="../../../assets/c2.jpg" alt="c2" /></div>
+        <div class="chair-img" fxLayoutAlign="center center" (click)="onclick('3')"><img src="../../../assets/c3.jpg" alt="c3" /></div>
+        <div class="chair-img" fxLayoutAlign="center center" (click)="onclick('4')"><img src="../../../assets/c4.jpg" alt="c4" /></div>
+        <div class="chair-img" fxLayoutAlign="center center" (click)="onclick('1')"><img src="../../../assets/c1.jpg" alt="c1" /></div>
+      </div>
+    </div>
+<!--------------------------- RIGHT BOX ----------------------->
+    <div class="right" fxFlex="60%">
+      <p class="name">Amazing Modern Chair (Orange) <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </p>
+      <p class="add-date">Added Date: 25/09/2023</p>
+      <div class="star" fxLayoutGap="7px">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+      </div>
+      <br>
+      <button class="instock-btn">Instock</button>
+      <br><br>
+      <p class="retail">Retail Price:</p>
+      <div class="price">$139.58</div>
+      <br><br>
+      <p class="quantity">Quantity</p>
+      <div class="quantities" fxLayoutGap="15px" fxLayout="row">
+        <input class="text-box" type="text" value="1">
+        <div class="add-to-cart"><button mat-raised-button><i class="fa fa-shopping-cart"></i><span>Add to cart</span></button></div>
+      </div>
+      <br><br>
+      <p class="description"> Description:</p>
+      <p class="des-content">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+      <br><br>
+      <div class="stock-details" fxLayout="row" fxLayoutGap="100px" fxLayoutGap.lt-lg="70px" fxLayoutGap.lt-md="50px" fxLayoutGap.lt-sm="30px">
+        <div class="stock">
+          <p>Available Stocks:</p>
+          <span>1784</span>
+        </div>
+        <div class="stock">
+          <p>Number of Orders:</p>
+          <span>5,458</span>
+        </div>
+        <div class="stock">
+          <p>Revenue:</p>
+          <span>$8,57,014</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

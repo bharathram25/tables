@@ -1,0 +1,115 @@
+<div class="full">
+  <div class="container">
+    <form [formGroup]="employeeRegistrationForm">
+      <!-- ------------ FIRST NAME & LAST NAME ------------ -->
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0px">
+        <div class="left" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">First name</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <input matInput formControlName="firstName" />
+            <mat-error *ngIf="employeeRegistrationForm?.get('firstName')?.hasError('required')">
+              This field is required</mat-error>
+            <mat-error *ngIf="employeeRegistrationForm?.get('firstName')?.hasError('pattern')">
+              Firstname is not valid</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="right" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Last name</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <input matInput formControlName="lastName" />
+            <mat-error *ngIf="employeeRegistrationForm?.get('lastName')?.hasError('required')">
+              This field is required</mat-error>
+            <mat-error *ngIf="employeeRegistrationForm?.get('lastName')?.hasError('maxLength')">
+              Lastname is not valid</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- <br><br> -->
+      <!-- -------------------------E-MAIL------------------------ -->
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0px">
+        <div class="left" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">E-mail</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <input matInput formControlName="eMail" />
+            <mat-error *ngIf="employeeRegistrationForm?.get('eMail')?.hasError('required')">
+              This field is required</mat-error>
+            <mat-error *ngIf="employeeRegistrationForm?.get('eMail')?.hasError('email')">E-mail is not valid</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="right" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Alternate E-mail</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <input matInput formControlName="alternateEmail" />
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- <br><br> -->
+
+      <!-- ----------------DATE PICKER -------------- -->
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0px">
+        <div class="left" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Date of Birth</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <input matInput [matDatepicker]="picker1" formControlName="dateOfBirth" [max]="todaydate" />
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error *ngIf="employeeRegistrationForm?.get('dateOfBirth')?.hasError('required') &&!employeeRegistrationForm?.get('dateOfBirth')?.hasError('matDatepickerParse')">
+              This field is required
+            </mat-error>
+            <mat-error *ngIf="employeeRegistrationForm?.get('dateOfBirth')?.hasError('matDatepickerParse') && employeeRegistrationForm?.get('dateOfBirth')?.hasError('required')">
+              Invalid Date
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="right" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Date of Joining</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <input matInput [matDatepicker]="picker2" formControlName="dateOfJoin"
+              [min]="employeeRegistrationForm.get('dateOfBirth')?.value" [max]="todaydate" />
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error *ngIf="employeeRegistrationForm?.get('dateOfJoin')?.hasError('required') && !employeeRegistrationForm?.get('dateOfJoin')?.hasError('matDatepickerParse')">
+              This field is required
+            </mat-error>
+            <mat-error *ngIf="employeeRegistrationForm?.get('dateOfJoin')?.hasError('matDatepickerParse') &&employeeRegistrationForm?.get('dateOfJoin')?.hasError('required')">
+              Invalid Date
+            </mat-error>
+            <mat-error *ngIf="employeeRegistrationForm?.get('dateofjoin')?.hasError('matDatepickerMin')">
+              Error
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- <br><br> -->
+      <!-- ------------DESIGNATION & ROLE------------ -->
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0px">
+        <div class="left" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Designation</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <mat-select formControlName="designation">
+              <mat-option [value]="item?.id" *ngFor="let item of designation">{{
+                item?.name
+                }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="employeeRegistrationForm?.get('designation')?.hasError('required')">
+              This field is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="right" fxFlex="50%" fxLayout="row" fxLayout.lt-md="column">
+          <mat-label fxFlex="40%">Role</mat-label>
+          <mat-form-field appearance="outline" fxFlex="60%">
+            <mat-select formControlName="role">
+              <mat-option [value]="item?.id" *ngFor="let item of role">{{item?.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="employeeRegistrationForm?.get('role')?.hasError('required')">
+              This field is required</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" (click)="onSubmit()">
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+  </div>
